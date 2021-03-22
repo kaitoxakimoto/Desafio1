@@ -22,14 +22,15 @@ State::State() {
 void State::mostrarSudoku() {
 	for (int i = 0; i < 9; i++) {
 		for (int j = 0; j < 9; j++) {
-			std::cout << matrix[i][j] << "\t";
+			std::cout << matrix[i][j] << "\t ";
 		}
 		std::cout << "\n";
 	}
 }
 
 std::list<Action> State::getActions() {
-	
+	std::list<Action> list;
+	return list;
 }
 
 State State::transition(State state, Action action) {
