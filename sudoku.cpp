@@ -39,3 +39,14 @@ void State::transition(Action action) {
 	int num = action.numero;
 	matrix[x][y] = num;
 }
+
+
+bool State::isFinalState(){
+	for (int i = 0; i < 9; i++) {
+		for (int j = 0; j < 9; j++) {
+			if (matrix[i][j] == 0) return false;
+			break;
+		}
+	}
+	return true;
+}

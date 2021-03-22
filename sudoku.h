@@ -32,7 +32,8 @@ public:
 	std::list<Action> getActions();
 	
 	void transition(Action action);
-	
+
+	bool isFinalState();	
 };
 
 
