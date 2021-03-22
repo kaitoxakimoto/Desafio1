@@ -8,9 +8,5 @@ int main(){
 
 	prueba.mostrarSudoku();
 
-	Action action;
-	prueba.transition(prueba, action);
-
-
 	return 0;
 }
