@@ -31,7 +31,7 @@ public:
 
 	std::list<Action> getActions();
 	
-	State transition(State state, Action action);
+	void transition(Action action);
 	
 };
 

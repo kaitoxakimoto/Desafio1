@@ -14,7 +14,7 @@ Action::Action() {
 State::State() {
 	for (int i = 0; i < 9; i++) {
 		for (int j = 0; j < 9; j++) {
-			matrix[i][j] = (i+1)*(j+1); //cambiar
+			matrix[i][j] = 0; //cambiar
 		}
 	}
 }
@@ -22,7 +22,7 @@ State::State() {
 void State::mostrarSudoku() {
 	for (int i = 0; i < 9; i++) {
 		for (int j = 0; j < 9; j++) {
-			std::cout << matrix[i][j] << "\t ";
+			std::cout << matrix[i][j] << "\t\t";
 		}
 		std::cout << "\n";
 	}
@@ -33,11 +33,9 @@ std::list<Action> State::getActions() {
 	return list;
 }
 
-State State::transition(State state, Action action) {
-	State new_state = state;
-	int x = action.x;
-	int y = action.y;
+void State::transition(Action action) {
+	int x = action.x - 1;
+	int y = action.y - 1;
 	int num = action.numero;
-	new_state.matrix[x][y] = num;
-	return new_state;
+	matrix[x][y] = num;
 }
