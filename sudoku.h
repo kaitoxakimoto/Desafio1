@@ -1,40 +1,40 @@
 #pragma once
 
-#include <list>
+#include <set>
 
-class Action {
-private:
-	//Este grupo no cree en los atributos privadas
-public:
-	//Atributos
-	int x, y, numero;
+using namespace std;
 
-	//Constructor
-	Action();
-
-	//Metodos
-
-};
 
 class State{
 private:
 	//Este grupo no cree en los atributos privadas
 public:
 	//Atributos
-	int matrix[9][9];
+	set<int> matrix[9][9];
 
 	//Constructor
 	State();
 
-	//Metodos
+	//Metodos de Impresion
 	void mostrarSudoku();
+	void mostrarSudokuDebug();
 
-	std::list<Action> getActions();
+	//Metodo de casilla
+	void setCasilla(int fila, int columnna, int numero);
+
+	//Metodos de llenado
+	void actualizarCasilla(int fila,int columna);
+
+	//Metodos de Resolucion
+	bool checkCandidato();
+	bool encontrarLugar();
+	void teoremaOcupacion();
+	void resolverSudoku();
+
+	//Metodos de Chequeo
+	bool isFinal();
 	
-	void transition(Action action);
-
-	bool isFinalState();	
+	bool numInCol();
+	bool numInFila();
+	bool numInBox();
 };
-
-
-
