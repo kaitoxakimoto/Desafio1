@@ -23,7 +23,7 @@ public:
 	void setCasilla(int fila, int columnna, int numero);
 
 	//Metodos de llenado
-	void actualizarCasilla(int fila,int columna);
+	bool actualizarCasilla(int fila,int columna);
 
 	//Metodos de Resolucion
 	bool checkCandidato();
@@ -34,7 +34,7 @@ public:
 	//Metodos de Chequeo
 	bool isFinal();
 	
-	bool numInCol();
-	bool numInFila();
-	bool numInBox();
+	bool numInCol(int numero,int columna);
+	bool numInFila(int numero,int fila);
+	bool numInBox(int numero,int fila,int columna);
 };

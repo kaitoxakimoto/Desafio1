@@ -1,5 +1,6 @@
 #include "sudoku.h"
 #include <iostream>
+#include <iomanip>
 #include <stdio.h>
 #include <set>
 
@@ -42,9 +43,11 @@ void State::mostrarSudokuDebug() {
 		for (int j = 0; j < 9; j++) {
 			set<int>::iterator iterador;
 			for(iterador = matrix[i][j].begin(); iterador!= matrix[i][j].end(); ++iterador){
-				cout << " " << *iterador;
+				cout << *iterador;
 			}
-			cout << " ";
+			for(int aux = 0; aux < 10 - matrix[i][j].size() ; aux++){
+				cout << " ";
+			}
 		}
 		cout << "\n";
 	}
@@ -61,7 +64,8 @@ void State::setCasilla(int fila, int columna, int numero){
 
 //Metodos de llenado
 bool State::actualizarCasilla(int fila, int columna){
-	bool flag false;
+	
+	bool flag = false;
 	set<int>::iterator iterador;
 
 	//Si la casilla es final, no necesita hacer nada.
@@ -72,9 +76,9 @@ bool State::actualizarCasilla(int fila, int columna){
 		if(numInFila(*iterador, fila) || numInCol(*iterador, columna) || numInBox(*iterador, fila,columna)){
 			flag = true;
 			matrix[fila][columna].erase(*iterador);
+			iterador = matrix[fila][columna].begin();
 		}
 	}
-
 	return flag;
 
 }
@@ -90,69 +94,45 @@ bool State::checkCandidato(){
 }
 
 bool State::encontrarLugar(){
-	//iterar Filas
-	int count = 0;
-	int arrayCount[9] = { 0 };
-
+	bool flag = false;
+	int count;
+	set<int> dondePuede;
 	for(int i=0; i<9; i++) { //recorro las filas y columnas
-		for (int j=0;j<9;j++) { //veo desde 1 a 9, la custion
-		
-		
+		for (int numero=1;numero<=9;numero++) { //veo desde 1 a 9, la custion
 			//con filas
-
-			if !numberInRow(i,j) { //busco si existe el numero de arriba en la fila
+			if (!numInFila(numero,i)) { //busco si existe el numero de arriba en la fila
+				count = 0;
+				dondePuede.clear();
 				for (int k=0;k<9;k++) { //si no existe, voy casilla por casilla en la fila
-					if  matrix[i][k].size() > 1 { //si la casilla tiene un size mayor 1, significa que esta vacio
-						if !numberInColumn(k,j) { //si el numero no existe la columna de esa casilla, se marca que puede existir ese numero en la casilla
-							arrayCount[k]=1;
-						}
+					if(matrix[i][k].count(numero) == 1){
+						dondePuede.insert(k);
+						count++;
 					}
 				}
-				if posicionArrayCount(arrayCount) { //una función que aun no creo, que revisa si en todo el array, solo hay una posición marcada
-					setCasilla(x,posicionArrayCount,j) //marca el numero en esa posicion
+				if (count == 1){
+					setCasilla(i+1,*dondePuede.begin()+1,numero);
+					flag = true;
 				}
-				arrayCount = {0,0,0,0,0,0,0,0,0} //despues veo una manera eficiente de volver a dejarlo en 0
 			}
-
-
-
 			//con columnas, que es lo mismo, pero invierto funciones
-
-			if !numInCol(j,i) { //busco si existe el numero de arriba en la columna
-				for (int k=0;k<9;k++) { //si no existe, voy casilla por casilla en la columna
-					if  matrix[i][k].size() > 1 { //si la casilla tiene un size mayor 1, significa que esta vacio
-						if !numInFila(j,k) { //si el numero no existe la columna de esa casilla, se marca que puede existir ese numero en la casilla
-							arrayCount[k]=1;
-						}
+			if (!numInCol(numero,i)) { //busco si existe el numero de arriba en la fila
+				count = 0;
+				dondePuede.clear();
+				for (int k=0;k<9;k++) { //si no existe, voy casilla por casilla en la fila
+					if(matrix[k][i].count(numero) == 1){
+						dondePuede.insert(k);
+						count++;
 					}
 				}
-				if posicionArrayCount(arrayCount) { //una función que aun no creo, que revisa si en todo el array, solo hay una posición marcada
-					setCasilla(x,posicionArrayCount,j) //marca el numero en esa posicion
+				if (count == 1){
+					setCasilla(*dondePuede.begin()+1,i+1,numero);
+					flag = true;
 				}
-				arrayCount = {0,0,0,0,0,0,0,0,0} //despues veo una manera eficiente de volver a dejarlo en 0
 			}
-			
 		}
-		
 	}
 
-	//iterar Columnas
-
-
-
-	//Iterar Cajas
-
-	for (i=0; i<9 ; i++) {
-		for (j=0; j<9; j++) {
-			if !numInBox()
-		}
-
-	}
-
-	
-
-
-	return false;
+	return flag;
 }
 
 void State::teoremaOcupacion(){
@@ -168,32 +148,32 @@ void State::resolverSudoku(){
 	}while(huboCambios);
 
 	/*Usamos el teorema de la Ocupacion*/
-	teoremaOcupacion();
+	//teoremaOcupacion();
 
 	/*Si no funciona, asumimos un estado e intentamos resolver
 	dicho estado recursivamente*/
 }
 //Metodos de Chequeo
 bool State::isFinal(){
-
+	return false;
 }
 
 bool State::numInCol(int num, int col){
-	for(int row=0;i<9;row++){
+	for(int row=0;row<9;row++){
 		if(matrix[row][col].size()== 1 && matrix[row][col].count(num)==1){
-			return True;
+			return true;
 		}
 	}
-	return False;
+	return false;
 }
 
 bool State::numInFila(int num, int row){
-	for(int col=0;i<9;col++){
+	for(int col=0;col<9;col++){
 		if(matrix[row][col].size()== 1 && matrix[row][col].count(num)==1){
-			return True;
+			return true;
 		}
 	}
-	return False;
+	return false;
 } 
 
 bool State::numInBox(int num, int row, int col){
@@ -203,11 +183,11 @@ bool State::numInBox(int num, int row, int col){
 	int finishCol= startCol+3;
 
 	for(int i=startRow ; i<finishRow ; i++){
-		for(int j=startCol ; j<finishCol ; i++){
-			if(matrix[i][j].size()== 1 && matrix[i][j].count(num)==1{
-				return True;
+		for(int j=startCol ; j<finishCol ; j++){
+			if(matrix[i][j].size()== 1 && matrix[i][j].count(num)==1){
+				return true;
 			}
 		}
 	}
-	return False;
+	return false;
 }
