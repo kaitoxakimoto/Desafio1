@@ -4,8 +4,8 @@
 
 using namespace std;
 
-
-class State{
+class State
+{
 private:
 	//Este grupo no cree en los atributos privadas
 public:
@@ -23,7 +23,7 @@ public:
 	void setCasilla(int fila, int columnna, int numero);
 
 	//Metodos de llenado
-	bool actualizarCasilla(int fila,int columna);
+	bool actualizarCasilla(int fila, int columna);
 
 	//Metodos de Resolucion
 	bool checkCandidato();
@@ -33,8 +33,8 @@ public:
 
 	//Metodos de Chequeo
 	bool isFinal();
-	
-	bool numInCol(int numero,int columna);
-	bool numInFila(int numero,int fila);
-	bool numInBox(int numero,int fila,int columna);
+
+	bool numInCol(int numero, int columna);
+	bool numInFila(int numero, int fila);
+	bool numInBox(int numero, int fila, int columna);
 };
