@@ -1,12 +1,12 @@
 #include "sudoku.h"
 
 #include <stdio.h>
-#include <string>
 
+#include <fstream>
 #include <iomanip>
 #include <iostream>
-#include <fstream>
 #include <set>
+#include <string>
 
 using namespace std;
 
@@ -21,26 +21,6 @@ State::State() {
         matrix[i][j].insert(numero);
       }
     }
-  }
-}
-
-void State::leerArchivo(string ruta) {
-  char c;
-  ifstream archivo(ruta);
-  int fila=1;
-  int columna=1;
-  while (archivo.get(c)){
-    if (c == '\n'){
-      fila++;
-      columna=1;
-    }
-    else if (c == '-'){
-      columna++;
-    }
-    else{
-      setCasilla(fila,columna,c - '0');
-      columna++;
-    } 
   }
 }
 
@@ -85,6 +65,24 @@ void State::setCasilla(int fila, int columna, int numero) {
   nueva.insert(numero);
 
   matrix[fila - 1][columna - 1] = nueva;
+}
+
+void State::leerArchivo(string ruta) {
+  char c;
+  ifstream archivo(ruta);
+  int fila = 1;
+  int columna = 1;
+  while (archivo.get(c)) {
+    if (c == '\n') {
+      fila++;
+      columna = 1;
+    } else if (c == '-') {
+      columna++;
+    } else {
+      setCasilla(fila, columna, c - '0');
+      columna++;
+    }
+  }
 }
 
 // Metodos de llenado
