@@ -3,8 +3,8 @@
 #include <stdio.h>
 
 #include <fstream>
-#include <iomanip>
 #include <iostream>
+#include <list>
 #include <set>
 #include <string>
 
@@ -37,9 +37,9 @@ void State::mostrarSudoku() {
       }
       cout << " ";
     }
-    cout << "\n";
+    cout << endl;
   }
-  cout << "\n";
+  cout << endl;
 }
 
 void State::mostrarSudokuDebug() {
@@ -54,9 +54,9 @@ void State::mostrarSudokuDebug() {
         cout << " ";
       }
     }
-    cout << "\n";
+    cout << endl;
   }
-  cout << "\n";
+  cout << endl;
 }
 
 // Metodos de casilla
@@ -163,44 +163,115 @@ bool State::hiddenSingle() {
   return flag;
 }
 
-void State::teoremaOcupacion() {}
-
 void State::resolverSudoku() {
-  /*Usamos metodos de nakedSingle y hiddenSingle
-  hasta que no surja ningun efecto con este*/
+  if (!isValid()){
+    return;
+  }
   bool huboCambios = true;
   do {
     huboCambios = nakedSingle() || hiddenSingle();
-  } while (huboCambios);
+  } while (huboCambios && isValid());
 
-  /*Usamos el teorema de la Ocupacion*/
-  // teoremaOcupacion();
+  if (isFinal()) {
+    return;
+  } else {
+    list<State> posibilidades = getBestActions();
+    list<State>::iterator candidato;
 
-  /*Si no funciona, asumimos un estado e intentamos resolver
-  dicho estado recursivamente*/
+    for (candidato = posibilidades.begin(); candidato != posibilidades.end();
+         ++candidato) {
+      State stateCandidato = *candidato;
+      stateCandidato.resolverSudoku();
+      if (stateCandidato.isFinal()){
+        *this = stateCandidato;
+      }
+    }
+  }
 }
-// Metodos de Chequeo
-bool State::isFinal() { return false; }
 
-bool State::numInCol(int num, int col) {
+list<State> State::getBestActions() {
+  // Obtener la mejor Celda
+  int bestFila = 0;
+  int bestCol = 0;
+  int bestPos = 10;
+
+  for (int i = 0; i < 9; i++) {
+    for (int j = 0; j < 9; j++) {
+      if (matrix[i][j].size() < bestPos && matrix[i][j].size() > 1) {
+        bestFila = i;
+        bestCol = j;
+        bestPos = matrix[i][j].size();
+      }
+    }
+  }
+  list<State> lista;
+  set<int>::iterator iterador;
+  for (iterador = matrix[bestFila][bestCol].begin();
+       iterador != matrix[bestFila][bestCol].end(); ++iterador) {
+    State aux = *this;
+    aux.setCasilla(bestFila + 1, bestCol + 1, *iterador);
+    lista.push_back(aux);
+  }
+  return lista;
+}
+
+// Metodos de Chequeo
+bool State::isValid() {
+  for (int numero = 1; numero <= 9; numero++) {
+    // Fila y Columna
+    for (int i = 0; i < 9; i++) {
+      if (numInCol(numero, i) > 1 || numInFila(numero, i) > 1) {
+        return false;
+      }
+    }
+    // Cajas
+    for (int i = 0; i < 9; i += 3) {
+      for (int j = 0; j < 9; j += 3)
+        if (numInBox(numero, i, j) > 1) {
+          return false;
+        }
+    }
+  }
+  return true;
+}
+
+bool State::isFinal() {
+  if (!isValid()) {
+    return false;
+  }
+  for (int i = 0; i < 9; i++) {
+    for (int j = 0; j < 9; j++) {
+      if (matrix[i][j].size() != 1) {
+        return false;
+      }
+    }
+  }
+  return true;
+}
+
+int State::numInCol(int num, int col) {
+  int cont = 0;
   for (int row = 0; row < 9; row++) {
     if (matrix[row][col].size() == 1 && matrix[row][col].count(num) == 1) {
-      return true;
+      cont++;
     }
   }
-  return false;
+  return cont;
 }
 
-bool State::numInFila(int num, int row) {
+int State::numInFila(int num, int row) {
+  int cont = 0;
   for (int col = 0; col < 9; col++) {
     if (matrix[row][col].size() == 1 && matrix[row][col].count(num) == 1) {
-      return true;
+      cont++;
     }
   }
-  return false;
+  return cont;
 }
 
-bool State::numInBox(int num, int row, int col) {
+int State::numInBox(int num, int row, int col) {
+  int cont = 0;
+
   int startRow = (row / 3) * 3;
   int finishRow = startRow + 3;
   int startCol = (col / 3) * 3;
@@ -209,9 +280,9 @@ bool State::numInBox(int num, int row, int col) {
   for (int i = startRow; i < finishRow; i++) {
     for (int j = startCol; j < finishCol; j++) {
       if (matrix[i][j].size() == 1 && matrix[i][j].count(num) == 1) {
-        return true;
+        cont++;
       }
     }
   }
-  return false;
+  return cont;
 }

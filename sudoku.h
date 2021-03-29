@@ -1,6 +1,11 @@
 #pragma once
 
+#include <stdio.h>
+
+#include <fstream>
+#include <iostream>
 #include <set>
+#include <list>
 #include <string>
 
 using namespace std;
@@ -29,13 +34,17 @@ class State {
   // Metodos de Resolucion
   bool nakedSingle();
   bool hiddenSingle();
-  void teoremaOcupacion();
   void resolverSudoku();
+  list<State> getBestActions();
 
   // Metodos de Chequeo
+  bool isValid();
   bool isFinal();
 
-  bool numInCol(int numero, int columna);
-  bool numInFila(int numero, int fila);
-  bool numInBox(int numero, int fila, int columna);
+  int numInCol(int numero, int columna);
+  int numInFila(int numero, int fila);
+  int numInBox(int numero, int fila, int columna);
+
+
+
 };
