@@ -93,43 +93,47 @@ bool State::encontrarLugar(){
 	//iterar Filas
 	int count = 0;
 	int arrayCount[9] = { 0 };
+	int i, j, k;
+	bool check = false;
 
-	for(int i=0; i<9; i++) { //recorro las filas y columnas
-		for (int j=0;j<9;j++) { //veo desde 1 a 9, la custion
+	for(i=0; i<9; i++) { //recorro las filas y columnas
+		for ( j=0;j<9;j++) { //veo desde 1 a 9, la custion
 		
 		
 			//con filas
 
-			if !numberInRow(i,j) { //busco si existe el numero de arriba en la fila
-				for (int k=0;k<9;k++) { //si no existe, voy casilla por casilla en la fila
-					if  matrix[i][k].size() > 1 { //si la casilla tiene un size mayor 1, significa que esta vacio
-						if !numberInColumn(k,j) { //si el numero no existe la columna de esa casilla, se marca que puede existir ese numero en la casilla
+			if (!numInFila(j,i)) { //busco si existe el numero de arriba en la fila
+				for (k=0;k<9;k++) { //si no existe, voy casilla por casilla en la fila
+					if  (matrix[i][k].size() > 1) { //si la casilla tiene un size mayor 1, significa que esta vacio
+						if (!numInCol(j,k)) { //si el numero no existe la columna de esa casilla, se marca que puede existir ese numero en la casilla
 							arrayCount[k]=1;
+							check = true;
 						}
 					}
 				}
-				if posicionArrayCount(arrayCount) { //una función que aun no creo, que revisa si en todo el array, solo hay una posición marcada
-					setCasilla(x,posicionArrayCount,j) //marca el numero en esa posicion
+				if (posicionArrayCount(arrayCount)) { //una función que aun no creo, que revisa si en todo el array, solo hay una posición marcada
+					setCasilla(i,posicionArrayCount(arrayCount),j); //marca el numero en esa posicion
 				}
-				arrayCount = {0,0,0,0,0,0,0,0,0} //despues veo una manera eficiente de volver a dejarlo en 0
+				 //despues veo una manera eficiente de volver a dejarlo en 0
 			}
 
 
 
 			//con columnas, que es lo mismo, pero invierto funciones
 
-			if !numInCol(j,i) { //busco si existe el numero de arriba en la columna
+			if (!numInCol(j,i)) { //busco si existe el numero de arriba en la columna
 				for (int k=0;k<9;k++) { //si no existe, voy casilla por casilla en la columna
-					if  matrix[i][k].size() > 1 { //si la casilla tiene un size mayor 1, significa que esta vacio
-						if !numInFila(j,k) { //si el numero no existe la columna de esa casilla, se marca que puede existir ese numero en la casilla
+					if  (matrix[i][k].size() > 1) { //si la casilla tiene un size mayor 1, significa que esta vacio
+						if (!numInFila(j,k)) { //si el numero no existe la columna de esa casilla, se marca que puede existir ese numero en la casilla
 							arrayCount[k]=1;
+							check = true;
 						}
 					}
 				}
-				if posicionArrayCount(arrayCount) { //una función que aun no creo, que revisa si en todo el array, solo hay una posición marcada
-					setCasilla(x,posicionArrayCount,j) //marca el numero en esa posicion
+				if (posicionArrayCount(arrayCount)) { //una función que aun no creo, que revisa si en todo el array, solo hay una posición marcada
+					setCasilla(i,posicionArrayCount(arrayCount),j); //marca el numero en esa posicion
 				}
-				arrayCount = {0,0,0,0,0,0,0,0,0} //despues veo una manera eficiente de volver a dejarlo en 0
+				 //despues veo una manera eficiente de volver a dejarlo en 0
 			}
 			
 		}
@@ -142,17 +146,16 @@ bool State::encontrarLugar(){
 
 	//Iterar Cajas
 
-	for (i=0; i<9 ; i++) {
-		for (j=0; j<9; j++) {
-			if !numInBox()
-		}
-
-	}
-
-	
 
 
-	return false;
+	return check;
+
+	//iterar Columnas
+
+
+
+	//Iterar Cajas
+
 }
 
 void State::teoremaOcupacion(){
@@ -210,4 +213,24 @@ bool State::numInBox(int num, int row, int col){
 		}
 	}
 	return False;
+}
+
+
+int State::posicionArrayCount(int* array) {
+
+	int index = 0;
+
+	for (int i=0;i<9;i++) {
+		if (array[i]==1) {
+			if (index==0) {
+				index = i;
+			}
+			else {
+				return 0;
+			}
+		}
+	}
+
+	return index;
+	
 }

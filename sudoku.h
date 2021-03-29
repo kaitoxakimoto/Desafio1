@@ -37,4 +37,6 @@ public:
 	bool numInCol();
 	bool numInFila();
 	bool numInBox();
+
+	int posicionArrayCount(int* array);
 };
