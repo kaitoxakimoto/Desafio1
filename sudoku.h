@@ -1,6 +1,7 @@
 #pragma once
 
 #include <set>
+#include <string>
 
 using namespace std;
 
@@ -20,13 +21,14 @@ class State {
 
   // Metodo de casilla
   void setCasilla(int fila, int columnna, int numero);
+  void leerArchivo(string ruta);
 
   // Metodos de llenado
   bool actualizarCasilla(int fila, int columna);
 
   // Metodos de Resolucion
-  bool checkCandidato();
-  bool encontrarLugar();
+  bool nakedSingle();
+  bool hiddenSingle();
   void teoremaOcupacion();
   void resolverSudoku();
 

@@ -1,9 +1,11 @@
 #include "sudoku.h"
 
 #include <stdio.h>
+#include <string>
 
 #include <iomanip>
 #include <iostream>
+#include <fstream>
 #include <set>
 
 using namespace std;
@@ -19,6 +21,26 @@ State::State() {
         matrix[i][j].insert(numero);
       }
     }
+  }
+}
+
+void State::leerArchivo(string ruta) {
+  char c;
+  ifstream archivo(ruta);
+  int fila=1;
+  int columna=1;
+  while (archivo.get(c)){
+    if (c == '\n'){
+      fila++;
+      columna=1;
+    }
+    else if (c == '-'){
+      columna++;
+    }
+    else{
+      setCasilla(fila,columna,c - '0');
+      columna++;
+    } 
   }
 }
 
@@ -87,7 +109,7 @@ bool State::actualizarCasilla(int fila, int columna) {
 }
 
 // Metodos de Resolucion
-bool State::checkCandidato() {
+bool State::nakedSingle() {
   for (int i = 0; i < 9; i++) {
     for (int j = 0; j < 9; j++) {
       actualizarCasilla(i, j);
@@ -96,7 +118,7 @@ bool State::checkCandidato() {
   return false;
 }
 
-bool State::encontrarLugar() {
+bool State::hiddenSingle() {
   bool flag = false;
   int count;
   set<int> dondePuede;
@@ -146,11 +168,11 @@ bool State::encontrarLugar() {
 void State::teoremaOcupacion() {}
 
 void State::resolverSudoku() {
-  /*Usamos metodos de checkCandidato y encontrarLugar
+  /*Usamos metodos de nakedSingle y hiddenSingle
   hasta que no surja ningun efecto con este*/
   bool huboCambios = true;
   do {
-    huboCambios = checkCandidato() || encontrarLugar();
+    huboCambios = nakedSingle() || hiddenSingle();
   } while (huboCambios);
 
   /*Usamos el teorema de la Ocupacion*/
