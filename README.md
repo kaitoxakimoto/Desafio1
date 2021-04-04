@@ -20,7 +20,7 @@ En caso de que el programa ya este precompilado entonces basta con ejecutar el p
 
 En caso de querer compilar su propia versión del programa. podrá ejecutar el archivo            “ compilador.bat ” o en una terminal (cmd) ejecutar la siguiente línea de comandos.
 
-__g++ -O3 -o desafio1 *.cpp__
+`g++ -O3 -o desafio1 *.cpp`
 
 Esto requerirá que su sistema tenga presente alguna versión del compilador g++. que puede conseguir [Aquí](http://mingw-w64.org/doku.php).
 
