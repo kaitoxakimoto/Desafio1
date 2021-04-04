@@ -15,7 +15,7 @@ using namespace std;
 int main() {
   State prueba;
 
-  prueba.leerArchivo("sudokuExamples/3.txt");
+  prueba.leerArchivo("sudoku.txt");
 
   cout << "el sudoku a resolver es el siguiente" << endl;
   prueba.mostrarSudoku();
@@ -24,6 +24,8 @@ int main() {
 
   cout << "respuesta" << endl;
   prueba.mostrarSudoku();
+
+  getchar();
 
   return 0;
 }
