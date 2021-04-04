@@ -2,6 +2,8 @@
 
 Bienvenido a Desafio1. Este programa busca resolver mediante Greedy Beam Search un sudoku incompleto. Esta guía lo ayudará a ejecutar de manera correcta el programa.
 
+<br></br>
+
 ## _Instrucciones de compilación_
 
 En la carpeta podemos ver que existen los siguientes archivos.
@@ -38,7 +40,7 @@ Al ejecutar el programa usted observará que el programa le mostrará su sudoku 
   <img  src="https://i.imgur.com/iW2ST32.png">
 </p>
 
-
+<br></br>
 
 ## _Descripción del problema_
 
@@ -93,7 +95,7 @@ __Greedy Beam Search:__ Se buscan las casillas más prometedoras: las que posean
   Fig. 3: La rama izquierda fue explorada y solo encontró estados inválidos, por lo que fue declarada inválida en su totalidad. La rama izquierda encontró un estado invalido, por lo que continuó explorando en su estado hermano, dejando 3 estados de la rama derecha sin explorar actualmente.
 </p>
 
-
+<br></br>
 
 ## _Coevaluación_
 
