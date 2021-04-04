@@ -107,6 +107,8 @@ __Greedy Beam Search:__ Se buscan las casillas más prometedoras: las que posean
 |  D. Contribución |  Siempre ofrece ideas para realizar el trabajo y propone sugerencias para su mejora. Se esfuerza para alcanzar los objetivos del grupo. |  7.0 |7.0   | 7.0  |
 |  E. Resolución de conflictos | En situaciones de desacuerdo o conflicto, siempre escucha otras opiniones y acepta sugerencias. Siempre propone alternativas para el consenso o la solución.  |  7.0 |  7.0 | 7.0  |
 
+<br></br>
+
 ## _Presentación en video_
 
 [Presentación en YouTube.](https://www.youtube.com/watch?v=A43KYQiKK5I)
