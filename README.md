@@ -59,9 +59,9 @@ __Naked Single:__ Primero se examina el sudoku por casillas donde solo existe un
 
 <p align="center">
   <img  src="https://i.imgur.com/UCY5LlK.png">
-  __Fig 1. Casilla [4,9] solo posee el número 7 como candidato, limpiando las casillas de la fila 4, columna 9 y bloque [2,3] que tengan el número 7 como candidato. Lo cual a su vez hace que la casilla [4,7] tenga solo el número 8 como candidato.__
-  
 </p>
+
+  __Fig 1. Casilla [4,9] solo posee el número 7 como candidato, limpiando las casillas de la fila 4, columna 9 y bloque [2,3] que tengan el número 7 como candidato. Lo cual a su vez hace que la casilla [4,7] tenga solo el número 8 como candidato.__
 
 
 
