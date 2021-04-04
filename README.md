@@ -6,10 +6,6 @@ Bienvenido a Desafio1. Este programa busca resolver mediante Greedy Beam Search 
 
 En la carpeta podemos ver que existen los siguientes archivos.
 
-<span class="img_container center" style="display: block;">
-    <img alt="test" src="https://i.imgur.com/3Qb4S3s.png" style="display:block; margin-left: auto; margin-right: auto;" title="caption" />
-    <span class="img_caption" style="display: block; text-align: center;">caption</span>
-</span>
 
 ![alt text](https://i.imgur.com/3Qb4S3s.png)
 
