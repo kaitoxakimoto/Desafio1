@@ -16,7 +16,10 @@ En la carpeta podemos ver que existen los siguientes archivos.
 De estos al usuario le importa “sudoku.txt”, que contiene el sudoku a resolver en el siguiente formato
 
 
-![alt text](https://i.imgur.com/WGEG3WM.png)
+<p align="center">
+  <img  src="https://i.imgur.com/WGEG3WM.png">
+</p>
+
 
 El archivo se compone de 9 filas de 9 caracteres cada una. Si una casilla tiene una pista inicial, se anota el número. Sino, se pone el caracter “ - ” (guión).
 
@@ -31,9 +34,9 @@ Esto requerirá que su sistema tenga presente alguna versión del compilador g++
 
 Al ejecutar el programa usted observará que el programa le mostrará su sudoku ingresado, para luego mostrar la solución.
 
-
-![alt text](https://i.imgur.com/iW2ST32.png)
-
+<p align="center">
+  <img  src="https://i.imgur.com/iW2ST32.png">
+</p>
 
 
 
@@ -54,9 +57,14 @@ __Naked Single:__ Primero se examina el sudoku por casillas donde solo existe un
 
 
 
-![alt text](https://i.imgur.com/UCY5LlK.png "caption")
+<p align="center">
+  <img  src="https://i.imgur.com/UCY5LlK.png">
+  __Fig 1. Casilla [4,9] solo posee el número 7 como candidato, limpiando las casillas de la fila 4, columna 9 y bloque [2,3] que tengan el número 7 como candidato. Lo cual a su vez hace que la casilla [4,7] tenga solo el número 8 como candidato.__
+  
+</p>
 
-__Fig 1. Casilla [4,9] solo posee el número 7 como candidato, limpiando las casillas de la fila 4, columna 9 y bloque [2,3] que tengan el número 7 como candidato. Lo cual a su vez hace que la casilla [4,7] tenga solo el número 8 como candidato.__
+
+
 
 __Simple Hidden Single:__ Luego se examina si existe una fila/columna/bloque (Set actual) donde exista un número que solo esté presente en una casilla del Set actual, similar al criterio de naked single, ya que este número solo existe en una casilla del set, es lógico que solo puede existir en esa casilla.
 
