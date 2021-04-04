@@ -181,6 +181,8 @@ void State::resolverSudoku() {
     for (candidato = posibilidades.begin(); candidato != posibilidades.end();
          ++candidato) {
       State stateCandidato = *candidato;
+      //cout << "la dimension paralela es la siguiente" << endl;
+      //stateCandidato.mostrarSudoku();
       stateCandidato.resolverSudoku();
       if (stateCandidato.isFinal()){
         *this = stateCandidato;
