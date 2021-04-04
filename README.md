@@ -35,11 +35,11 @@ Al ejecutar el programa usted observará que el programa le mostrará su sudoku 
 ## _Descripción del problema_
 
 
-equisde
+ඞ ඞ ඞ  equisde  ඞ ඞ ඞ
 
 ## _Descripción del algoritmo_
 
-equisde
+ඞ ඞ ඞ  equisde  ඞ ඞ ඞ
 
 ## _Coevaluación_
 
