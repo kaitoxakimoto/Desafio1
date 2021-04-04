@@ -62,7 +62,7 @@ __Naked Single:__ Primero se examina el sudoku por casillas donde solo existe un
 </p>
 
 <p align="center">
-  __Fig 1. Casilla [4,9] solo posee el número 7 como candidato, limpiando las casillas de la fila 4, columna 9 y bloque [2,3] que tengan el número 7 como candidato. Lo cual a su vez hace que la casilla [4,7] tenga solo el número 8 como candidato.__
+  Fig 1. Casilla [4,9] solo posee el número 7 como candidato, limpiando las casillas de la fila 4, columna 9 y bloque [2,3] que tengan el número 7 como candidato. Lo cual a su vez hace que la casilla [4,7] tenga solo el número 8 como candidato.
 </p>
 
 
@@ -77,8 +77,11 @@ __Simple Hidden Single:__ Luego se examina si existe una fila/columna/bloque (Se
   <img  src="https://i.imgur.com/dSAV8Ge.png">
 </p>
 
+<p align="center">
+  Fig 2: La casilla [1,9] es la única de su fila, columna y bloque que posee el número 5 como candidato, por lo que es un movimiento seguro.
+</p>
 
-__Fig 2: La casilla [1,9] es la única de su fila, columna y bloque que posee el número 5 como candidato, por lo que es un movimiento seguro.__
+<br></br>
 
 __Greedy Beam Search:__ Se buscan las casillas más prometedoras: las que posean la menor cantidad de candidatos. Luego se eligen por orden de llegada y se crean estados para cada uno de sus números candidatos donde se posiciona dicho número. La función ResolverSudoku() se llama iterativamente por sobre estos estados hasta encontrar la solución final o un estado invalido. Si encuentra un estado invalido se retrocederá al último estado válido y se probarán otros movimientos válidos hijos de este. Si un estado solo lleva a estados inválidos, este también es declarado invalido.
 
@@ -88,8 +91,10 @@ __Greedy Beam Search:__ Se buscan las casillas más prometedoras: las que posean
   <img  src="https://i.imgur.com/dbrzzlU.png">
 </p>
 
+<p align="center">
+  Fig. 3: La rama izquierda fue explorada y solo encontró estados inválidos, por lo que fue declarada inválida en su totalidad. La rama izquierda encontró un estado invalido, por lo que continuó explorando en su estado hermano, dejando 3 estados de la rama derecha sin explorar actualmente.
+</p>
 
-__Fig. 3: La rama izquierda fue explorada y solo encontró estados inválidos, por lo que fue declarada inválida en su totalidad. La rama izquierda encontró un estado invalido, por lo que continuó explorando en su estado hermano, dejando 3 estados de la rama derecha sin explorar actualmente.__
 
 
 ## _Coevaluación_
