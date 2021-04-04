@@ -61,7 +61,10 @@ __Naked Single:__ Primero se examina el sudoku por casillas donde solo existe un
   <img  src="https://i.imgur.com/UCY5LlK.png">
 </p>
 
+<p align="center">
   __Fig 1. Casilla [4,9] solo posee el número 7 como candidato, limpiando las casillas de la fila 4, columna 9 y bloque [2,3] que tengan el número 7 como candidato. Lo cual a su vez hace que la casilla [4,7] tenga solo el número 8 como candidato.__
+</p>
+
 
 
 
@@ -69,14 +72,22 @@ __Naked Single:__ Primero se examina el sudoku por casillas donde solo existe un
 __Simple Hidden Single:__ Luego se examina si existe una fila/columna/bloque (Set actual) donde exista un número que solo esté presente en una casilla del Set actual, similar al criterio de naked single, ya que este número solo existe en una casilla del set, es lógico que solo puede existir en esa casilla.
 
 
-![alt text](https://i.imgur.com/dSAV8Ge.png)
+
+<p align="center">
+  <img  src="https://i.imgur.com/dSAV8Ge.png">
+</p>
+
 
 __Fig 2: La casilla [1,9] es la única de su fila, columna y bloque que posee el número 5 como candidato, por lo que es un movimiento seguro.__
 
 __Greedy Beam Search:__ Se buscan las casillas más prometedoras: las que posean la menor cantidad de candidatos. Luego se eligen por orden de llegada y se crean estados para cada uno de sus números candidatos donde se posiciona dicho número. La función ResolverSudoku() se llama iterativamente por sobre estos estados hasta encontrar la solución final o un estado invalido. Si encuentra un estado invalido se retrocederá al último estado válido y se probarán otros movimientos válidos hijos de este. Si un estado solo lleva a estados inválidos, este también es declarado invalido.
 
 
-![alt text](https://i.imgur.com/dbrzzlU.png)
+
+<p align="center">
+  <img  src="https://i.imgur.com/dbrzzlU.png">
+</p>
+
 
 __Fig. 3: La rama izquierda fue explorada y solo encontró estados inválidos, por lo que fue declarada inválida en su totalidad. La rama izquierda encontró un estado invalido, por lo que continuó explorando en su estado hermano, dejando 3 estados de la rama derecha sin explorar actualmente.__
 
