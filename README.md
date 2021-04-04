@@ -49,7 +49,7 @@ Un sudoku para considerarse completo debe tener todas sus casillas llenas con n�
 Nuestra solución al desafío 1 modela el problema con una matriz de 9x9 casillas. Cada casilla contiene un set de números del 1 al 9, los cuales representan los posibles números que pueden colocarse allí. Cada vez que un número es colocado en la matriz, ya sea por el estado inicial o un movimiento, se remueve ese número de las otras casillas en su fila, columna y bloque. 
 
 
-
+<br></br>
 
 ## _Descripción del algoritmo_
 
