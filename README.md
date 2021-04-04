@@ -21,10 +21,10 @@ En caso de querer compilar su propia versión del programa. podrá ejecutar el a
 
 __g++ -O3 -o desafio1 *.cpp__
 
-Esto requerirá que su sistema tenga presente alguna versión del compilador g++. que puede conseguir [Aquí.](http://mingw-w64.org/doku.php).
+Esto requerirá que su sistema tenga presente alguna versión del compilador g++. que puede conseguir [Aquí](http://mingw-w64.org/doku.php).
 
 
-Al ejecutar el programa Usted observará que el programa le mostrará su sudoku ingresado, para luego mostrar la solución.
+Al ejecutar el programa usted observará que el programa le mostrará su sudoku ingresado, para luego mostrar la solución.
 
 
 ![alt text](https://i.imgur.com/iW2ST32.png)
