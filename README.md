@@ -8,10 +8,9 @@ En la carpeta podemos ver que existen los siguientes archivos.
 
 <center>
 
-![alt text](https://i.imgur.com/3Qb4S3s.png) </center>
 
 <p align="center">
-  <img width="460" height="300" src="http://www.fillmurray.com/460/300">
+  <img  src="https://i.imgur.com/3Qb4S3s.png">
 </p>
 
 De estos al usuario le importa “sudoku.txt”, que contiene el sudoku a resolver en el siguiente formato
