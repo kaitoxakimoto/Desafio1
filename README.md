@@ -65,9 +65,7 @@ __Naked Single:__ Primero se examina el sudoku por casillas donde solo existe un
   Fig 1. Casilla [4,9] solo posee el número 7 como candidato, limpiando las casillas de la fila 4, columna 9 y bloque [2,3] que tengan el número 7 como candidato. Lo cual a su vez hace que la casilla [4,7] tenga solo el número 8 como candidato.
 </p>
 
-
-
-
+<br></br>
 
 __Simple Hidden Single:__ Luego se examina si existe una fila/columna/bloque (Set actual) donde exista un número que solo esté presente en una casilla del Set actual, similar al criterio de naked single, ya que este número solo existe en una casilla del set, es lógico que solo puede existir en esa casilla.
 
