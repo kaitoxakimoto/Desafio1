@@ -6,8 +6,10 @@ Bienvenido a Desafio1. Este programa busca resolver mediante Greedy Beam Search 
 
 En la carpeta podemos ver que existen los siguientes archivos.
 
+<center>
 
-![alt text](https://i.imgur.com/3Qb4S3s.png)
+![alt text](https://i.imgur.com/3Qb4S3s.png) </center>
+
 
 De estos al usuario le importa “sudoku.txt”, que contiene el sudoku a resolver en el siguiente formato
 
