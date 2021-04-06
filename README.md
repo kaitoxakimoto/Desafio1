@@ -107,6 +107,8 @@ __Greedy Beam Search:__ Se buscan las casillas más prometedoras: las que posean
 |  D. Contribución |  Siempre ofrece ideas para realizar el trabajo y propone sugerencias para su mejora. Se esfuerza para alcanzar los objetivos del grupo. |  3 |1   | -3  |
 |  E. Resolución de conflictos | En situaciones de desacuerdo o conflicto, siempre escucha otras opiniones y acepta sugerencias. Siempre propone alternativas para el consenso o la solución.  |  -2 |  -1 | 2  |
 
+### _Retroalimentación de compañeros_
+
 | | Fabían Pizarro | Rafael Diaz  | Leandro Villalobos | 
 |---|---|---|---|
 | Fabían Pizarro | | + Disponible a toda hora <br></br> - Cuando le emociona una idea, la sigue ciegamente sin flexibilidad  |  + Disposicion a ayudar en todo <br></br> - Dificultad de comunicacion de ideas|
