@@ -109,8 +109,8 @@ __Greedy Beam Search:__ Se buscan las casillas más prometedoras: las que posean
 
 | | Fabían Pizarro | Rafael Diaz  | Leandro Villalobos | 
 |---|---|---|---|
-| Fabían Pizarro | | + Disponible a toda hora <br></br> - Cuando le emociona una idea, la sigue ciegamente sin flexibilidad  |  + Disposicion a ayudar en todo <br></br> - Dificultad de comunicacion de ideas <br></br> - Dificultad de comunicación para coordinarse con sus compañeros|
-| Rafael Diaz  | + Trabaja muy duro y de manera eficiente <br></br> - Dificultad de comunicación para coordinarse con sus compañeros | | + Involucrado en la investigación y desarrollo del trabajo |
+| Fabían Pizarro | | + Disponible a toda hora <br></br> - Cuando le emociona una idea, la sigue ciegamente sin flexibilidad  |  + Disposicion a ayudar en todo <br></br> - Dificultad de comunicacion de ideas|
+| Rafael Diaz  | + Trabaja muy duro y de manera eficiente <br></br> - Dificultad de comunicación para coordinarse con sus compañeros | | + Involucrado en la investigación y desarrollo del trabajo <br></br> - Dificultad de comunicación para coordinarse con sus compañeros|
 | Leandro Villalobos | + Buen liderazgo del grupo. <br></br> - A veces avanza sin previo aviso. | + Disponibilidad y comunicación. <br></br> - Sintaxis de pseudo codigo. | |
 
 <br></br>
