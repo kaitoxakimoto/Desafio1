@@ -99,13 +99,19 @@ __Greedy Beam Search:__ Se buscan las casillas más prometedoras: las que posean
 
 ## _Coevaluación_
 
-| Criterio | Descripción  |  Fabían Pizarro | Rafael Diaz  | Leandro Villalobos | Comentario |
-|---|---|---|---|---|---|
-|A. Asistencia y puntualidad   | Asistió siempre a las reuniones de proyecto y fue puntual.  |  1 | 1  | 2  | Test |
-| B. Integración  |  Siempre escucha y comparte las ideas de sus compañeros e intenta integrarlas. Busca cómo mantener la unión en el grupo. |  -3 |  -2 | 2  | TEST |
-| C. Responsabilidad  | Siempre entrega su trabajo a tiempo y el grupo no tiene que modificar sus fechas o plazos.  | 1  |  1 |  -3 | TEST |
-|  D. Contribución |  Siempre ofrece ideas para realizar el trabajo y propone sugerencias para su mejora. Se esfuerza para alcanzar los objetivos del grupo. |  3 |1   | -3  | TEST |
-|  E. Resolución de conflictos | En situaciones de desacuerdo o conflicto, siempre escucha otras opiniones y acepta sugerencias. Siempre propone alternativas para el consenso o la solución.  |  -2 |  -1 | 2  | TEST |
+| Criterio | Descripción  |  Fabían Pizarro | Rafael Diaz  | Leandro Villalobos |
+|---|---|---|---|---|
+|A. Asistencia y puntualidad   | Asistió siempre a las reuniones de proyecto y fue puntual.  |  1 | 1  | 2  |
+| B. Integración  |  Siempre escucha y comparte las ideas de sus compañeros e intenta integrarlas. Busca cómo mantener la unión en el grupo. |  -3 |  -2 | 2  |
+| C. Responsabilidad  | Siempre entrega su trabajo a tiempo y el grupo no tiene que modificar sus fechas o plazos.  | 1  |  1 |  -3 |
+|  D. Contribución |  Siempre ofrece ideas para realizar el trabajo y propone sugerencias para su mejora. Se esfuerza para alcanzar los objetivos del grupo. |  3 |1   | -3  |
+|  E. Resolución de conflictos | En situaciones de desacuerdo o conflicto, siempre escucha otras opiniones y acepta sugerencias. Siempre propone alternativas para el consenso o la solución.  |  -2 |  -1 | 2  |
+
+| | Fabían Pizarro | Rafael Diaz  | Leandro Villalobos | 
+|---|---|---|---|
+| Fabían Pizarro | | + Disponible a toda hora <br></br> - Cuando le emociona una idea, la sigue ciegamente sin flexibilidad  |  + Disposicion a ayudar en todo <br></br> - Dificultad de comunicacion de ideas <br></br> - Dificultad de comunicación para coordinarse con sus compañeros|
+| Rafael Diaz  | + Trabaja muy duro y de manera eficiente <br></br> - Dificultad de comunicación para coordinarse con sus compañeros | | + Involucrado en la investigación y desarrollo del trabajo |
+| Leandro Villalobos | + Buen liderazgo del grupo. <br></br> - A veces avanza sin previo aviso. | + Disponibilidad y comunicación. <br></br> - Sintaxis de pseudo codigo. | |
 
 <br></br>
 
