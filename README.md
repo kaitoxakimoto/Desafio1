@@ -101,11 +101,11 @@ __Greedy Beam Search:__ Se buscan las casillas más prometedoras: las que posean
 
 | Criterio | Descripción  |  Fabían Pizarro | Rafael Diaz  | Leandro Villalobos |
 |---|---|---|---|---|
-|A. Asistencia y puntualidad   | Asistió siempre a las reuniones de proyecto y fue puntual.  |  7.0 | 7.0  | 2  |
-| B. Integración  |  Siempre escucha y comparte las ideas de sus compañeros e intenta integrarlas. Busca cómo mantener la unión en el grupo. |  7.0 |  7.0 | 2  |
-| C. Responsabilidad  | Siempre entrega su trabajo a tiempo y el grupo no tiene que modificar sus fechas o plazos.  | 7.0  |  7.0 |  -3 |
-|  D. Contribución |  Siempre ofrece ideas para realizar el trabajo y propone sugerencias para su mejora. Se esfuerza para alcanzar los objetivos del grupo. |  7.0 |7.0   | -3  |
-|  E. Resolución de conflictos | En situaciones de desacuerdo o conflicto, siempre escucha otras opiniones y acepta sugerencias. Siempre propone alternativas para el consenso o la solución.  |  7.0 |  7.0 | 2  |
+|A. Asistencia y puntualidad   | Asistió siempre a las reuniones de proyecto y fue puntual.  |  1 | 1  | 2  |
+| B. Integración  |  Siempre escucha y comparte las ideas de sus compañeros e intenta integrarlas. Busca cómo mantener la unión en el grupo. |  -3 |  -2 | 2  |
+| C. Responsabilidad  | Siempre entrega su trabajo a tiempo y el grupo no tiene que modificar sus fechas o plazos.  | 1  |  1 |  -3 |
+|  D. Contribución |  Siempre ofrece ideas para realizar el trabajo y propone sugerencias para su mejora. Se esfuerza para alcanzar los objetivos del grupo. |  3 |1   | -3  |
+|  E. Resolución de conflictos | En situaciones de desacuerdo o conflicto, siempre escucha otras opiniones y acepta sugerencias. Siempre propone alternativas para el consenso o la solución.  |  -2 |  -1 | 2  |
 
 <br></br>
 
